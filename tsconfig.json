@@ -1,18 +1,43 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", "./.react-router/types/**/*"],
+  "include": [
+    "env.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "app/**/*.d.ts",
+    "*.ts",
+    "*.tsx",
+    "*.d.ts",
+    ".graphqlrc.ts",
+    ".react-router/types/**/*"
+  ],
+  "exclude": ["node_modules", "dist", "build", "packages/**/dist/**/*"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["@shopify/oxygen-workers-types", "vite/client"],
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "module": "ESNext",
     "moduleResolution": "Bundler",
-    "noEmit": true,
     "resolveJsonModule": true,
-    "strict": true,
+    "module": "ES2022",
     "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "plugins": [{"name": "@shopify/hydrogen/ts-plugin"}]
+    "baseUrl": ".",
+    "types": [
+      "@shopify/oxygen-workers-types",
+      "react-router",
+      "@shopify/hydrogen/react-router-types",
+      "vite/client"
+    ],
+    "paths": {
+      "~/*": ["app/*"]
+    },
+    "noEmit": true,
+    "rootDirs": [".", "./.react-router/types"],
+    "incremental": true,
+    "composite": false,
+    "verbatimModuleSyntax": true
   }
 }
