@@ -1,5 +1,5 @@
 import type {LinksFunction, LoaderFunctionArgs, MetaFunction} from 'react-router';
-import {Links, Meta, Outlet, Scripts, ScrollRestoration, LiveReload, useRouteError, isRouteErrorResponse} from 'react-router';
+import {Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteError, isRouteErrorResponse} from 'react-router';
 import {Layout} from './components/Layout';
 import styles from './styles/app.css?url';
 
